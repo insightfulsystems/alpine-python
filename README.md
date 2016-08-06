@@ -32,6 +32,7 @@ The default docker Python images are too [big](https://github.com/docker-library
 
 ```
 REPOSITORY                TAG           VIRTUAL SIZE
+rcarmo/alpine-python      2.7           221.3 MB
 rcarmo/alpine-python      3.5           242.7 MB
 jfloff/alpine-python      3.4           225.7 MB
 python                    3.4           685.5 MB

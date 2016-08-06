@@ -1,5 +1,7 @@
 FROM rcarmo/alpine-python:3.5
 
+MAINTAINER Rui Carmo https://github.com/rcarmo
+
 # install requirements
 # this way when you build you won't need to install again
 # ans since COPY is cached we don't need to wait

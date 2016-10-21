@@ -2,7 +2,7 @@
 
 [![Docker Stars](https://img.shields.io/docker/stars/rcarmo/alpine-python.svg)][hub]
 [![Docker Pulls](https://img.shields.io/docker/pulls/rcarmo/alpine-python.svg)][hub]
-[![Docker Layers](https://badge.imagelayers.io/rcarmo/alpine-python:latest.svg)](https://imagelayers.io/?images=rcarmo/alpine-python:latest 'Get your own badge on imagelayers.io')
+[![Docker Layers](https://images.microbadger.com/badges/version/rcarmo/alpine-python.svg)](https://microbadger.com/images/rcarmo/alpine-python)
 
 [hub]: https://hub.docker.com/r/rcarmo/alpine-python/
 

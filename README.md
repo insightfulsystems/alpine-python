@@ -1,10 +1,9 @@
 # alpine-python
 
-[![Docker Stars](https://img.shields.io/docker/stars/rcarmo/alpine-python.svg)][hub]
-[![Docker Pulls](https://img.shields.io/docker/pulls/rcarmo/alpine-python.svg)][hub]
-[![Docker Layers](https://images.microbadger.com/badges/version/rcarmo/alpine-python.svg)](https://microbadger.com/images/rcarmo/alpine-python)
-
-[hub]: https://hub.docker.com/r/rcarmo/alpine-python/
+[![Docker Stars](https://img.shields.io/docker/stars/rcarmo/alpine-python.svg)](https://hub.docker.com/r/rcarmo/alpine-python)
+[![Docker Pulls](https://img.shields.io/docker/pulls/rcarmo/alpine-python.svg)](https://hub.docker.com/r/rcarmo/alpine-python)
+[![](https://images.microbadger.com/badges/image/rcarmo/azure-toolbox.svg)](https://microbadger.com/images/rcarmo/alpine-python "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/rcarmo/azure-toolbox.svg)](https://microbadger.com/images/rcarmo/alpine-python "Get your own version badge on microbadger.com")
 
 A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), inspired by [jfloff's original work](https://github.com/jfloff/alpine-python) but updated for Python 3.5 and 2016 builds of Alpine. The Python 3.5 image is only 225.7 MB and includes `python3-dev`.
 

@@ -25,7 +25,7 @@ When last built on August 6, 2016 against Alpine 3.4, the images contained the f
 
 ## Why?
 
-Well, first off, because I needed an easy way to run and deploy a Linux build of Python 3.5, which, given the current state of affairs in Python land, is not yet my go-to continuously useful for me. And the [original builds by jfloff](https://github.com/jfloff/alpine-python) had everything needed for the most common Python projects - including `python3-dev` (which is not common in most minimal alpine Python packages), plus the great `-onbuild` variants, which made it a lot easier to build ready-to-deploy apps.
+Well, first off, because I needed an easy way to run and deploy a Linux build of Python 3.5, which, given the current state of affairs in Python land, is not yet my go to version and hence only occasionally useful for me. The [original builds by jfloff](https://github.com/jfloff/alpine-python) had everything needed for the most common Python projects - including `python3-dev` (which is not common in most minimal alpine Python packages), plus the great `-onbuild` variants, which made it a lot easier to build ready-to-deploy apps, so it was perfect for getting 3.5 going without disrupting my existing environments.
 
 The default docker Python images are too [big](https://github.com/docker-library/python/issues/45), much larger than they need to be. [Alpine-based](https://github.com/gliderlabs/docker-alpine) images are just _way_ smaller and faster to deploy:
 
@@ -46,7 +46,7 @@ This image runs `python` command on `docker run`. You can either specify your ow
 docker run --rm -ti rcarmo/alpine-python python hello.py
 ```
 
-Or extend this images using your custom `Dockerfile`, e.g:
+Or extend this image using your custom `Dockerfile`, e.g:
 ```dockerfile
 FROM rcarmo/alpine-python:3.5-onbuild
 

@@ -5,7 +5,7 @@
 [![](https://images.microbadger.com/badges/image/rcarmo/alpine-python.svg)](https://microbadger.com/images/rcarmo/alpine-python "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/rcarmo/alpine-python.svg)](https://microbadger.com/images/rcarmo/alpine-python "Get your own version badge on microbadger.com")
 
-A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), inspired by [jfloff's original work](https://github.com/jfloff/alpine-python) but updated for Python 3.5 and 2016 builds of Alpine. The Python 3.5 image is only 225.7 MB and includes `python3-dev`.
+A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), inspired by [jfloff's original work](https://github.com/jfloff/alpine-python) but updated for Python 3.5.2 and 2016 builds of Alpine. The Python 3.5.2 image is only 244 MB and includes `python3-dev`.
 
 
 ## Supported tags
@@ -18,10 +18,10 @@ A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), in
 
 ## Current Versions
 
-When last built on August 6, 2016 against Alpine 3.4, the images contained the following minor/patch Python versions:
+When last built on November 12, 2016 against Alpine 3.4, the images contained the following minor/patch Python versions:
 
 * Python 2.7.12
-* Python 3.5.1
+* Python 3.5.2
 
 ## Why?
 
@@ -31,8 +31,8 @@ The default docker Python images are too [big](https://github.com/docker-library
 
 ```
 REPOSITORY                TAG           VIRTUAL SIZE
-rcarmo/alpine-python      2.7           221.3 MB
-rcarmo/alpine-python      3.5           242.7 MB
+rcarmo/alpine-python      2.7           223 MB
+rcarmo/alpine-python      3.5           244.8 MB
 jfloff/alpine-python      3.4           225.7 MB
 python                    3.4           685.5 MB
 python                    3.4-slim      215.1 MB
@@ -83,12 +83,12 @@ Here's a dump of the `apk` output for each version, currently built against Alpi
 ### 2.7
 
 ```
-(1/40) Upgrading musl (1.1.14-r10 -> 1.1.14-r11)
+(1/40) Upgrading musl (1.1.14-r12 -> 1.1.14-r14)
 (2/40) Installing ncurses-terminfo-base (6.0-r7)
 (3/40) Installing ncurses-terminfo (6.0-r7)
 (4/40) Installing ncurses-libs (6.0-r7)
 (5/40) Installing readline (6.3.008-r4)
-(6/40) Installing bash (4.3.42-r3)
+(6/40) Installing bash (4.3.42-r4)
 (7/40) Installing binutils-libs (2.26-r0)
 (8/40) Installing binutils (2.26-r0)
 (9/40) Installing gmp (6.1.0-r0)
@@ -103,19 +103,19 @@ Here's a dump of the `apk` output for each version, currently built against Alpi
 (18/40) Installing libstdc++ (5.3.0-r0)
 (19/40) Installing gcc (5.3.0-r0)
 (20/40) Installing make (4.1-r1)
-(21/40) Installing musl-dev (1.1.14-r11)
+(21/40) Installing musl-dev (1.1.14-r14)
 (22/40) Installing libc-dev (0.7-r0)
 (23/40) Installing fortify-headers (0.8-r0)
 (24/40) Installing g++ (5.3.0-r0)
 (25/40) Installing build-base (0.4-r1)
 (26/40) Installing ca-certificates (20160104-r4)
 (27/40) Installing libssh2 (1.7.0-r0)
-(28/40) Installing libcurl (7.50.1-r0)
+(28/40) Installing libcurl (7.51.0-r0)
 (29/40) Installing expat (2.1.1-r1)
 (30/40) Installing pcre (8.38-r1)
 (31/40) Installing git (2.8.3-r0)
-(32/40) Upgrading musl-utils (1.1.14-r10 -> 1.1.14-r11)
-(33/40) Installing libbz2 (1.0.6-r4)
+(32/40) Upgrading musl-utils (1.1.14-r12 -> 1.1.14-r14)
+(33/40) Installing libbz2 (1.0.6-r5)
 (34/40) Installing libffi (3.2.1-r2)
 (35/40) Installing gdbm (1.11-r1)
 (36/40) Installing sqlite-libs (3.13.0-r0)
@@ -128,12 +128,12 @@ Here's a dump of the `apk` output for each version, currently built against Alpi
 ### 3.5
 
 ```
-(1/39) Upgrading musl (1.1.14-r10 -> 1.1.14-r11)
+(1/39) Upgrading musl (1.1.14-r12 -> 1.1.14-r14)
 (2/39) Installing ncurses-terminfo-base (6.0-r7)
 (3/39) Installing ncurses-terminfo (6.0-r7)
 (4/39) Installing ncurses-libs (6.0-r7)
 (5/39) Installing readline (6.3.008-r4)
-(6/39) Installing bash (4.3.42-r3)
+(6/39) Installing bash (4.3.42-r4)
 (7/39) Installing binutils-libs (2.26-r0)
 (8/39) Installing binutils (2.26-r0)
 (9/39) Installing gmp (6.1.0-r0)
@@ -148,26 +148,28 @@ Here's a dump of the `apk` output for each version, currently built against Alpi
 (18/39) Installing libstdc++ (5.3.0-r0)
 (19/39) Installing gcc (5.3.0-r0)
 (20/39) Installing make (4.1-r1)
-(21/39) Installing musl-dev (1.1.14-r11)
+(21/39) Installing musl-dev (1.1.14-r14)
 (22/39) Installing libc-dev (0.7-r0)
 (23/39) Installing fortify-headers (0.8-r0)
 (24/39) Installing g++ (5.3.0-r0)
 (25/39) Installing build-base (0.4-r1)
 (26/39) Installing ca-certificates (20160104-r4)
 (27/39) Installing libssh2 (1.7.0-r0)
-(28/39) Installing libcurl (7.50.1-r0)
+(28/39) Installing libcurl (7.51.0-r0)
 (29/39) Installing expat (2.1.1-r1)
 (30/39) Installing pcre (8.38-r1)
 (31/39) Installing git (2.8.3-r0)
-(32/39) Upgrading musl-utils (1.1.14-r10 -> 1.1.14-r11)
-(33/39) Installing libbz2 (1.0.6-r4)
+(32/39) Upgrading musl-utils (1.1.14-r12 -> 1.1.14-r14)
+(33/39) Installing libbz2 (1.0.6-r5)
 (34/39) Installing libffi (3.2.1-r2)
 (35/39) Installing gdbm (1.11-r1)
 (36/39) Installing xz-libs (5.2.2-r1)
 (37/39) Installing sqlite-libs (3.13.0-r0)
-(38/39) Installing python3 (3.5.1-r3)
-(39/39) Installing python3-dev (3.5.1-r3)
+(38/39) Installing python3 (3.5.2-r1)
+(39/39) Installing python3-dev (3.5.2-r1)
 ```
+
+`pip` is upgraded to 9.0.1 in both cases.
 
 ## License
 The code in this repository, unless otherwise noted, is MIT licensed. See the `LICENSE` file in this repository.

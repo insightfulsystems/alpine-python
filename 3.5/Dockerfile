@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM rcarmo/alpine:3.4-armhf
 
 MAINTAINER Rui Carmo https://github.com/rcarmo
 

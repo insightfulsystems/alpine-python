@@ -1,4 +1,4 @@
-FROM rcarmo/alpine-python:2.7
+FROM rcarmo/alpine-python:2.7-armhf
 
 MAINTAINER Rui Carmo https://github.com/rcarmo
 

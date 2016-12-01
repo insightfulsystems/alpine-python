@@ -1,4 +1,4 @@
-# alpine-python
+# alpine-python (`armhf`)
 
 [![Docker Stars](https://img.shields.io/docker/stars/rcarmo/alpine-python.svg)](https://hub.docker.com/r/rcarmo/alpine-python)
 [![Docker Pulls](https://img.shields.io/docker/pulls/rcarmo/alpine-python.svg)](https://hub.docker.com/r/rcarmo/alpine-python)
@@ -9,16 +9,16 @@ A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), in
 
 
 ## Supported tags
-* **2.7 ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/master/2.7/Dockerfile))**
-* **2.7-onbuild ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/master/2.7/onbuild/Dockerfile))**
-* **3.5 ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/master/3.5/Dockerfile))**
-* **3.5-onbuild ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/master/3.5/onbuild/Dockerfile))**
+* **2.7-armhf ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/armhf/2.7/Dockerfile))**
+* **2.7-armhf-onbuild ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/armhf/2.7/onbuild/Dockerfile))**
+* **3.5-armhf ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/armhf/3.5/Dockerfile))**
+* **3.5-armhf-onbuild ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/armhf/3.5/onbuild/Dockerfile))**
 
 **NOTE:** `onbuild` images install the `requirements.txt` of your project from the get go. This allows you to cache your requirements right in the build. _Make sure you are in the same directory of your `requirements.txt` file_.
 
-## Current Versions
+## Current Versions (`armhf`)
 
-When last built on November 12, 2016 against Alpine 3.4, the images contained the following minor/patch Python versions:
+When last built on December 1, 2016 against Alpine 3.4, the images contained the following minor/patch Python versions:
 
 * Python 2.7.12
 * Python 3.5.2
@@ -83,90 +83,81 @@ Here's a dump of the `apk` output for each version, currently built against Alpi
 ### 2.7
 
 ```
-(1/40) Upgrading musl (1.1.14-r12 -> 1.1.14-r14)
-(2/40) Installing ncurses-terminfo-base (6.0-r7)
-(3/40) Installing ncurses-terminfo (6.0-r7)
-(4/40) Installing ncurses-libs (6.0-r7)
-(5/40) Installing readline (6.3.008-r4)
-(6/40) Installing bash (4.3.42-r4)
-(7/40) Installing binutils-libs (2.26-r0)
-(8/40) Installing binutils (2.26-r0)
-(9/40) Installing gmp (6.1.0-r0)
-(10/40) Installing isl (0.14.1-r0)
-(11/40) Installing libgomp (5.3.0-r0)
-(12/40) Installing libatomic (5.3.0-r0)
-(13/40) Installing libgcc (5.3.0-r0)
-(14/40) Installing pkgconf (0.9.12-r0)
-(15/40) Installing pkgconfig (0.25-r1)
-(16/40) Installing mpfr3 (3.1.2-r0)
-(17/40) Installing mpc1 (1.0.3-r0)
-(18/40) Installing libstdc++ (5.3.0-r0)
-(19/40) Installing gcc (5.3.0-r0)
-(20/40) Installing make (4.1-r1)
-(21/40) Installing musl-dev (1.1.14-r14)
-(22/40) Installing libc-dev (0.7-r0)
-(23/40) Installing fortify-headers (0.8-r0)
-(24/40) Installing g++ (5.3.0-r0)
-(25/40) Installing build-base (0.4-r1)
-(26/40) Installing ca-certificates (20160104-r4)
-(27/40) Installing libssh2 (1.7.0-r0)
-(28/40) Installing libcurl (7.51.0-r0)
-(29/40) Installing expat (2.1.1-r1)
-(30/40) Installing pcre (8.38-r1)
-(31/40) Installing git (2.8.3-r0)
-(32/40) Upgrading musl-utils (1.1.14-r12 -> 1.1.14-r14)
-(33/40) Installing libbz2 (1.0.6-r5)
-(34/40) Installing libffi (3.2.1-r2)
-(35/40) Installing gdbm (1.11-r1)
-(36/40) Installing sqlite-libs (3.13.0-r0)
-(37/40) Installing python (2.7.12-r0)
-(38/40) Installing py-setuptools (20.8.0-r0)
-(39/40) Installing py-pip (8.1.2-r0)
-(40/40) Installing python-dev (2.7.12-r0)
+(1/35) Installing ncurses-terminfo-base (6.0-r7)
+(2/35) Installing ncurses-terminfo (6.0-r7)
+(3/35) Installing ncurses-libs (6.0-r7)
+(4/35) Installing readline (6.3.008-r4)
+(5/35) Installing bash (4.3.42-r4)
+(6/35) Installing binutils-libs (2.26-r0)
+(7/35) Installing binutils (2.26-r0)
+(8/35) Installing gmp (6.1.0-r0)
+(9/35) Installing isl (0.14.1-r0)
+(10/35) Installing libgomp (5.3.0-r0)
+(11/35) Installing libatomic (5.3.0-r0)
+(12/35) Installing pkgconf (0.9.12-r0)
+(13/35) Installing pkgconfig (0.25-r1)
+(14/35) Installing libgcc (5.3.0-r0)
+(15/35) Installing mpfr3 (3.1.2-r0)
+(16/35) Installing mpc1 (1.0.3-r0)
+(17/35) Installing libstdc++ (5.3.0-r0)
+(18/35) Installing gcc (5.3.0-r0)
+(19/35) Installing make (4.1-r1)
+(20/35) Installing musl-dev (1.1.14-r14)
+(21/35) Installing libc-dev (0.7-r0)
+(22/35) Installing fortify-headers (0.8-r0)
+(23/35) Installing g++ (5.3.0-r0)
+(24/35) Installing build-base (0.4-r1)
+(25/35) Installing expat (2.1.1-r2)
+(26/35) Installing pcre (8.38-r1)
+(27/35) Installing git (2.8.3-r0)
+(28/35) Installing libbz2 (1.0.6-r5)
+(29/35) Installing libffi (3.2.1-r2)
+(30/35) Installing gdbm (1.11-r1)
+(31/35) Installing sqlite-libs (3.13.0-r0)
+(32/35) Installing python (2.7.12-r0)
+(33/35) Installing py-setuptools (20.8.0-r0)
+(34/35) Installing py-pip (8.1.2-r0)
+(35/35) Installing python-dev (2.7.12-r0)
 ```
 
 ### 3.5
 
 ```
-(1/39) Upgrading musl (1.1.14-r12 -> 1.1.14-r14)
-(2/39) Installing ncurses-terminfo-base (6.0-r7)
-(3/39) Installing ncurses-terminfo (6.0-r7)
-(4/39) Installing ncurses-libs (6.0-r7)
-(5/39) Installing readline (6.3.008-r4)
-(6/39) Installing bash (4.3.42-r4)
-(7/39) Installing binutils-libs (2.26-r0)
-(8/39) Installing binutils (2.26-r0)
-(9/39) Installing gmp (6.1.0-r0)
-(10/39) Installing isl (0.14.1-r0)
-(11/39) Installing libgomp (5.3.0-r0)
-(12/39) Installing libatomic (5.3.0-r0)
-(13/39) Installing libgcc (5.3.0-r0)
-(14/39) Installing pkgconf (0.9.12-r0)
-(15/39) Installing pkgconfig (0.25-r1)
-(16/39) Installing mpfr3 (3.1.2-r0)
-(17/39) Installing mpc1 (1.0.3-r0)
-(18/39) Installing libstdc++ (5.3.0-r0)
-(19/39) Installing gcc (5.3.0-r0)
-(20/39) Installing make (4.1-r1)
-(21/39) Installing musl-dev (1.1.14-r14)
-(22/39) Installing libc-dev (0.7-r0)
-(23/39) Installing fortify-headers (0.8-r0)
-(24/39) Installing g++ (5.3.0-r0)
-(25/39) Installing build-base (0.4-r1)
-(26/39) Installing ca-certificates (20160104-r4)
-(27/39) Installing libssh2 (1.7.0-r0)
-(28/39) Installing libcurl (7.51.0-r0)
-(29/39) Installing expat (2.1.1-r1)
-(30/39) Installing pcre (8.38-r1)
-(31/39) Installing git (2.8.3-r0)
-(32/39) Upgrading musl-utils (1.1.14-r12 -> 1.1.14-r14)
-(33/39) Installing libbz2 (1.0.6-r5)
-(34/39) Installing libffi (3.2.1-r2)
-(35/39) Installing gdbm (1.11-r1)
-(36/39) Installing xz-libs (5.2.2-r1)
-(37/39) Installing sqlite-libs (3.13.0-r0)
-(38/39) Installing python3 (3.5.2-r1)
-(39/39) Installing python3-dev (3.5.2-r1)
+(1/34) Installing ncurses-terminfo-base (6.0-r7)
+(2/34) Installing ncurses-terminfo (6.0-r7)
+(3/34) Installing ncurses-libs (6.0-r7)
+(4/34) Installing readline (6.3.008-r4)
+(5/34) Installing bash (4.3.42-r4)
+Executing bash-4.3.42-r4.post-install
+(6/34) Installing binutils-libs (2.26-r0)
+(7/34) Installing binutils (2.26-r0)
+(8/34) Installing gmp (6.1.0-r0)
+(9/34) Installing isl (0.14.1-r0)
+(10/34) Installing libgomp (5.3.0-r0)
+(11/34) Installing libatomic (5.3.0-r0)
+(12/34) Installing pkgconf (0.9.12-r0)
+(13/34) Installing pkgconfig (0.25-r1)
+(14/34) Installing libgcc (5.3.0-r0)
+(15/34) Installing mpfr3 (3.1.2-r0)
+(16/34) Installing mpc1 (1.0.3-r0)
+(17/34) Installing libstdc++ (5.3.0-r0)
+(18/34) Installing gcc (5.3.0-r0)
+(19/34) Installing make (4.1-r1)
+(20/34) Installing musl-dev (1.1.14-r14)
+(21/34) Installing libc-dev (0.7-r0)
+(22/34) Installing fortify-headers (0.8-r0)
+(23/34) Installing g++ (5.3.0-r0)
+(24/34) Installing build-base (0.4-r1)
+(25/34) Installing expat (2.1.1-r2)
+(26/34) Installing pcre (8.38-r1)
+(27/34) Installing git (2.8.3-r0)
+(28/34) Installing libbz2 (1.0.6-r5)
+(29/34) Installing libffi (3.2.1-r2)
+(30/34) Installing gdbm (1.11-r1)
+(31/34) Installing xz-libs (5.2.2-r1)
+(32/34) Installing sqlite-libs (3.13.0-r0)
+(33/34) Installing python3 (3.5.2-r1)
+(34/34) Installing python3-dev (3.5.2-r1)
 ```
 
 `pip` is upgraded to 9.0.1 in both cases.

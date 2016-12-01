@@ -33,9 +33,8 @@ The default docker Python images are too [big](https://github.com/docker-library
 REPOSITORY                TAG           VIRTUAL SIZE
 rcarmo/alpine-python      2.7           223 MB
 rcarmo/alpine-python      3.5           244.8 MB
-jfloff/alpine-python      3.4           225.7 MB
-python                    3.4           685.5 MB
-python                    3.4-slim      215.1 MB
+rcarmo/alpine-python      2.7-armhf     185 MB
+rcarmo/alpine-python      3.5-armhf     202 MB
 ```
 
 We actually get around the same size as `python:3.4-slim` *but* with `python3-dev` installed (that's around 55MB).

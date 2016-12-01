@@ -1,4 +1,4 @@
-# alpine-python
+# alpine-python (now in `x64` and `armhf` flavors)
 
 [![Docker Stars](https://img.shields.io/docker/stars/rcarmo/alpine-python.svg)](https://hub.docker.com/r/rcarmo/alpine-python)
 [![Docker Pulls](https://img.shields.io/docker/pulls/rcarmo/alpine-python.svg)](https://hub.docker.com/r/rcarmo/alpine-python)
@@ -7,21 +7,31 @@
 
 A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), inspired by [jfloff's original work](https://github.com/jfloff/alpine-python) but updated for Python 3.5.2 and 2016 builds of Alpine. The Python 3.5.2 image is only 244 MB and includes `python3-dev`.
 
-
 ## Supported tags
+
+`latest` is not guaranteed to give you the version (or architecture) you want, so please use the following tags:
+
 * **2.7 ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/master/2.7/Dockerfile))**
 * **2.7-onbuild ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/master/2.7/onbuild/Dockerfile))**
+* **2.7-armhf ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/armhf/2.7/Dockerfile))**
+* **2.7-armhf-onbuild ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/armhf/2.7/onbuild/Dockerfile))**
 * **3.5 ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/master/3.5/Dockerfile))**
 * **3.5-onbuild ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/master/3.5/onbuild/Dockerfile))**
+* **3.5-armhf ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/armhf/3.5/Dockerfile))**
+* **3.5-armhf-onbuild ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/armhf/3.5/onbuild/Dockerfile))**
 
 **NOTE:** `onbuild` images install the `requirements.txt` of your project from the get go. This allows you to cache your requirements right in the build. _Make sure you are in the same directory of your `requirements.txt` file_.
 
+Also, sometime in the near future the 'bare' versions will be deprecated and I will be adding an explicit `x64` tag.
+
 ## Current Versions
 
-When last built on November 12, 2016 against Alpine 3.4, the images contained the following minor/patch Python versions:
+When last built on December 1st, 2016 against Alpine 3.4, the images contained the following minor/patch Python versions:
 
 * Python 2.7.12
 * Python 3.5.2
+
+For details on the `armmf` versions (which I always try to keep in sync with the `x64` ones, check the `armhf` branch.
 
 ## Why?
 
@@ -78,7 +88,7 @@ docker run --rm -v "$(pwd)":/home/app -w /home/app -p 5000:5000 -ti rcarmo/app
 
 ## Packages installed
 
-Here's a dump of the `apk` output for each version, currently built against Alpine 3.4:
+Here's a dump of the `apk` output for the `x64` versions, currently built against Alpine 3.4:
 
 ### 2.7
 

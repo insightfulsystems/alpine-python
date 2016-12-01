@@ -31,7 +31,7 @@ When last built on December 1st, 2016 against Alpine 3.4, the images contained t
 * Python 2.7.12
 * Python 3.5.2
 
-For details on the `armmf` versions (which I always try to keep in sync with the `x64` ones, check the `armhf` branch.
+For details on the `armhf` versions (which I always try to keep in sync with the `x64` ones, check the `armhf` branch.
 
 ## Why?
 

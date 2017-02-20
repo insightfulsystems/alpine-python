@@ -25,7 +25,8 @@ RUN cd /usr/bin \
   && ln -sf pydoc3.5 pydoc \
   && ln -sf python3.5 python \
   && ln -sf python-config3.5 python-config \
-  && ln -sf pip3.5 pip
+  && ln -sf pip3.5 pip \
+  && ln -s /usr/include/locale.h /usr/include/xlocale.h
 
 # since we will be "always" mounting the volume, we can set this up
 CMD python

@@ -24,7 +24,8 @@ RUN cd /usr/bin \
   && ln -sf easy_install-2.7 easy_install \
   && ln -sf python2.7 python \
   && ln -sf python2.7-config python-config \
-  && ln -sf pip2.7 pip
+  && ln -sf pip2.7 pip \
+  && ln -s /usr/include/locale.h /usr/include/xlocale.h
 
 # since we will be "always" mounting the volume, we can set this up
 CMD python

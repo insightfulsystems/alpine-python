@@ -5,7 +5,7 @@
 [![](https://images.microbadger.com/badges/image/rcarmo/alpine-python.svg)](https://microbadger.com/images/rcarmo/alpine-python "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/rcarmo/alpine-python.svg)](https://microbadger.com/images/rcarmo/alpine-python "Get your own version badge on microbadger.com")
 
-A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), inspired by [jfloff's original work](https://github.com/jfloff/alpine-python) but updated for Python 3.5.2 and 2016 builds of Alpine. The Python 3.5.2 image is only 244 MB and includes `python3-dev`.
+A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), inspired by [jfloff's original work](https://github.com/jfloff/alpine-python) but updated for Python 3.6.0/3.5.2 and 2016 builds of Alpine. The Python 3.5.2 image is only 244 MB and includes `python3-dev`.
 
 ## Supported tags
 
@@ -19,6 +19,8 @@ A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), in
 * **3.5-onbuild ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/master/3.5/onbuild/Dockerfile))**
 * **3.5-armhf ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/armhf/3.5/Dockerfile))**
 * **3.5-armhf-onbuild ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/armhf/3.5/onbuild/Dockerfile))**
+* **3.6 ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/master/3.6/Dockerfile))**
+* **3.6-onbuild ([Dockerfile](https://github.com/rcarmo/alpine-python/blob/master/3.6/onbuild/Dockerfile))**
 
 **NOTE:** `onbuild` images install the `requirements.txt` of your project from the get go. This allows you to cache your requirements right in the build. _Make sure you are in the same directory of your `requirements.txt` file_.
 
@@ -26,10 +28,11 @@ Also, sometime in the near future the 'bare' versions will be deprecated and I w
 
 ## Current Versions
 
-When last built on December 1st, 2016 against Alpine 3.4, the images contained the following minor/patch Python versions:
+When last built on March 16th, 2017, the images contained the following minor/patch Python versions:
 
-* Python 2.7.12
+* Python 2.7.13
 * Python 3.5.2
+* Python 3.6.0 (edge)
 
 For details on the `armhf` versions (which I always try to keep in sync with the `x64` ones, check the `armhf` branch.
 
@@ -181,7 +184,7 @@ Here's a dump of the `apk` output for the `x64` versions, currently built agains
 (39/39) Installing python3-dev (3.5.2-r1)
 ```
 
-`pip` is upgraded to 9.0.1 in both cases.
+`pip` is upgraded to 9.0.1 in all cases.
 
 ## License
 The code in this repository, unless otherwise noted, is MIT licensed. See the `LICENSE` file in this repository.

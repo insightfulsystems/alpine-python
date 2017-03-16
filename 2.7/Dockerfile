@@ -16,6 +16,8 @@ RUN echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/
               python \
               python-dev \
               py-pip \
+              gfortran \
+              lapack-dev \
   && pip install --upgrade pip \
   && rm /var/cache/apk/*
 
@@ -25,7 +27,7 @@ RUN cd /usr/bin \
   && ln -sf python2.7 python \
   && ln -sf python2.7-config python-config \
   && ln -sf pip2.7 pip \
-  && ln -s /usr/include/locale.h /usr/include/xlocale.h
+  && ln -sf /usr/include/locale.h /usr/include/xlocale.h
 
 # since we will be "always" mounting the volume, we can set this up
 CMD python

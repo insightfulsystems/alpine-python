@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.5
 
 MAINTAINER Rui Carmo https://github.com/rcarmo
 
@@ -15,6 +15,8 @@ RUN echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/
               python3-dev \
               bash \
               git \
+              gfortran \
+              lapack-dev \
   && pip3.5 install --upgrade pip \
   && rm /var/cache/apk/*
 
@@ -26,7 +28,7 @@ RUN cd /usr/bin \
   && ln -sf python3.5 python \
   && ln -sf python-config3.5 python-config \
   && ln -sf pip3.5 pip \
-  && ln -s /usr/include/locale.h /usr/include/xlocale.h
+  && ln -sf /usr/include/locale.h /usr/include/xlocale.h
 
 # since we will be "always" mounting the volume, we can set this up
 CMD python

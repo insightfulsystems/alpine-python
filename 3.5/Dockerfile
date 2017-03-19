@@ -9,6 +9,7 @@ MAINTAINER Rui Carmo https://github.com/rcarmo
 #   * bash: so we can access /bin/bash
 RUN echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
   && apk add --update \
+              ca-certificates \
               musl \
               build-base \
               python3 \

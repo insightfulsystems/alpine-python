@@ -8,6 +8,7 @@ MAINTAINER Rui Carmo https://github.com/rcarmo
 #   * python-dev: are used for gevent e.g.
 #   * bash: so we can access /bin/bash
 RUN apk add --update \
+              ca-certificates \
               musl \
               build-base \
               python3 \

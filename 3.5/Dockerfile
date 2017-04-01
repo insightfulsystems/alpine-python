@@ -18,6 +18,7 @@ RUN echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/
               git \
               gfortran \
               lapack-dev \
+              libxml2-dev \
   && pip3.5 install --upgrade pip \
   && rm /var/cache/apk/*
 

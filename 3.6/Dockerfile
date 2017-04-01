@@ -17,6 +17,7 @@ RUN apk add --update \
               git \
               gfortran \
               lapack-dev \
+              libxml2-dev \
   && pip3.6 install --upgrade pip \
   && rm /var/cache/apk/*
 

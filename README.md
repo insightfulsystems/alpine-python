@@ -32,7 +32,7 @@ When last built on March 16th, 2017, the images contained the following minor/pa
 
 * Python 2.7.13
 * Python 3.5.2
-* Python 3.6.0 (edge)
+* Python 3.6.1 (edge)
 
 For details on the `armhf` versions (which I always try to keep in sync with the `x64` ones, check the `armhf` branch.
 

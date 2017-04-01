@@ -7,7 +7,7 @@ build:
 	docker build -t rcarmo/alpine-python:3.6-onbuild 3.6/onbuild
 	docker tag rcarmo/alpine-python:2.7 rcarmo/alpine-python:2.7.13
 	docker tag rcarmo/alpine-python:3.5 rcarmo/alpine-python:3.5.2
-	docker tag rcarmo/alpine-python:3.6 rcarmo/alpine-python:3.6.0
+	docker tag rcarmo/alpine-python:3.6 rcarmo/alpine-python:3.6.1
 	docker tag rcarmo/alpine-python:3.6 rcarmo/alpine-python:latest
 
 push:

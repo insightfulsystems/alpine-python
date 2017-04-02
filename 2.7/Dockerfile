@@ -20,6 +20,8 @@ RUN echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/
               gfortran \
               lapack-dev \
               libxml2-dev \
+              libxslt-dev \
+              jpeg-dev \
   && pip install --upgrade pip \
   && rm /var/cache/apk/*
 

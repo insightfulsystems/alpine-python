@@ -18,6 +18,8 @@ RUN apk add --update \
               gfortran \
               lapack-dev \
               libxml2-dev \
+              libxslt-dev \
+              jpeg-dev \
   && pip3.6 install --upgrade pip \
   && rm /var/cache/apk/*
 

@@ -20,18 +20,19 @@ RUN apk add --update \
               libxml2-dev \
               libxslt-dev \
               jpeg-dev \
-  && pip3.6 install --upgrade pip \
-  && rm /var/cache/apk/*
+ && pip3.6 install --upgrade pip \
+ && rm /var/cache/apk/*
 
-# make some useful symlinks that are expected to exist
-RUN cd /usr/bin \
-  && ln -sf easy_install-3.6 easy_install \
-  && ln -sf idle3.6 idle \
-  && ln -sf pydoc3.6 pydoc \
-  && ln -sf python3.6 python \
-  && ln -sf python-config3.6 python-config \
-  && ln -sf pip3.6 pip \
-  && ln -sf /usr/include/locale.h /usr/include/xlocale.h
+# make us compatible with manylinux wheels and create some useful symlinks that are expected to exist
+RUN echo "manylinux1_compatible = True" > /usr/lib/python3.6/_manylinux.py \
+ && cd /usr/bin \
+ && ln -sf easy_install-3.6 easy_install \
+ && ln -sf idle3.6 idle \
+ && ln -sf pydoc3.6 pydoc \
+ && ln -sf python3.6 python \
+ && ln -sf python-config3.6 python-config \
+ && ln -sf pip3.6 pip \
+ && ln -sf /usr/include/locale.h /usr/include/xlocale.h
 
 # since we will be "always" mounting the volume, we can set this up
 CMD python

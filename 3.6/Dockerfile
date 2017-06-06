@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.6
 
 MAINTAINER Rui Carmo https://github.com/rcarmo
 

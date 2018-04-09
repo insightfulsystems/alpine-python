@@ -1,4 +1,5 @@
-FROM rcarmo/alpine-python:2.7
+ARG BASE 
+FROM ${BASE}:2.7
 
 MAINTAINER Rui Carmo https://github.com/rcarmo
 

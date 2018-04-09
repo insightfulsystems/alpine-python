@@ -9,6 +9,7 @@ script:
 
 after_success:
   - docker --version  # document the version travis is using
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset # setup QEMU for cross-builds
   - make build
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - make push

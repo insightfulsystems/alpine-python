@@ -1,0 +1,12 @@
+sudo: required
+language: python
+services:
+  - docker
+install:
+  - echo "nothing to install"
+script:
+  - echo "no tests yet"
+
+after_success:
+  - docker --version  # document the version travis is using
+  - make build

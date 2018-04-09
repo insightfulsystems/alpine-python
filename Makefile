@@ -13,7 +13,7 @@ build:
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
 		--build-arg BASE=$(IMAGE_NAME):2.7 \
-		-t $(IMAGE_NAME):2.7-onbuild 2.7/onbuild
+		-t $(IMAGE_NAME):2.7-onbuild onbuild
 	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
@@ -22,7 +22,7 @@ build:
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
 		--build-arg BASE=$(IMAGE_NAME):3.5 \
-		-t $(IMAGE_NAME):3.5-onbuild 3.5/onbuild
+		-t $(IMAGE_NAME):3.5-onbuild onbuild
 	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
@@ -31,6 +31,6 @@ build:
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
 		--build-arg BASE=$(IMAGE_NAME):3.6 \
-		-t $(IMAGE_NAME):3.6-onbuild 3.6/onbuild
+		-t $(IMAGE_NAME):3.6-onbuild onbuild
 push:
 	docker push $(IMAGE_NAME)

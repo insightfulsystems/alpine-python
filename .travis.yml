@@ -10,3 +10,4 @@ script:
 after_success:
   - docker --version  # document the version travis is using
   - make build
+  - make push

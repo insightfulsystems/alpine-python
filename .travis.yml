@@ -2,14 +2,16 @@ sudo: required
 language: python
 services:
   - docker
+
+before_install:
+  - docker --version  # document the version travis is using
+
 install:
-  - echo "nothing to install"
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset # setup QEMU for cross-builds
+
 script:
-  - echo "no tests yet"
+  - make build
 
 after_success:
-  - docker --version  # document the version travis is using
-  - docker run --rm --privileged multiarch/qemu-user-static:register --reset # setup QEMU for cross-builds
-  - make build
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - make push

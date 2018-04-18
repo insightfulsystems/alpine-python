@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.7
 
 MAINTAINER Rui Carmo https://github.com/rcarmo
 
@@ -7,8 +7,7 @@ MAINTAINER Rui Carmo https://github.com/rcarmo
 #   * build-base: used so we include the basic development packages (gcc)
 #   * python-dev: are used for gevent e.g.
 #   * bash: so we can access /bin/bash
-RUN echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
- && apk add --update \
+RUN apk add --update \
               ca-certificates \
               musl \
               build-base \

@@ -6,7 +6,7 @@
 [![](https://images.microbadger.com/badges/version/insightful/alpine-python.svg)](https://microbadger.com/images/insightful/alpine-python "Get your own version badge on microbadger.com")
 [![Build Status](https://travis-ci.org/insightfulsystems/alpine-python.svg?branch=master)](https://travis-ci.org/insightfulsystems/alpine-python)
 
-A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), inspired by [jfloff's original work](https://github.com/jfloff/alpine-python) but updated for Python 3.6.0/3.5.2 and 2016 builds of Alpine. The Python 3.5.2 image is only 244 MB and includes `python3-dev`, and all images include support for `manylinux` wheels (where possible)
+A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), inspired by [jfloff's original work](https://github.com/jfloff/alpine-python) but updated for Python 3.6/2.7 and 2016 builds of Alpine. The Python 3 image is only 244 MB and includes `python3-dev`, and all images include support for `manylinux` wheels (where possible)
 
 ## Supported tags
 
@@ -14,8 +14,6 @@ A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), in
 
 * **2.7 ([Dockerfile](https://github.com/insightfulsystems/alpine-python/blob/master/2.7/Dockerfile))**
 * **2.7-armhf ([Dockerfile](https://github.com/insightfulsystems/alpine-python/blob/armhf/2.7/Dockerfile))**
-* **3.5 ([Dockerfile](https://github.com/insightfulsystems/alpine-python/blob/master/3.5/Dockerfile))**
-* **3.5-armhf ([Dockerfile](https://github.com/insightfulsystems/alpine-python/blob/armhf/3.5/Dockerfile))**
 * **3.6 ([Dockerfile](https://github.com/insightfulsystems/alpine-python/blob/master/3.6/Dockerfile))**
 
 **NOTE:** `onbuild` images install the `requirements.txt` of your project from the get go. This allows you to cache your requirements right in the build. _Make sure you are in the same directory of your `requirements.txt` file_.

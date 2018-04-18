@@ -4,6 +4,9 @@ export VCS_URL=https://github.com/insightfulsystems/alpine-python
 export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
 export TAG_DATE=`date -u +"%Y%m%d"`
 
+# Make sure make ignores the folders (I like short target names, but these collide with the folder structure)
+.PHONY: 2.7 3.5 3.6
+
 2.7:
 	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
 		--build-arg VCS_REF=$(VCS_REF) \

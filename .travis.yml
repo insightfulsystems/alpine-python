@@ -10,7 +10,9 @@ install:
   - docker run --rm --privileged multiarch/qemu-user-static:register --reset # setup QEMU for cross-builds
 
 script:
-  - make build
+  - make 2.7
+  - make 3.5
+  - make 3.6
 
 after_success:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD

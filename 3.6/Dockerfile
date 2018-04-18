@@ -36,3 +36,10 @@ RUN echo "manylinux1_compatible = True" > /usr/lib/python3.6/_manylinux.py \
 
 # since we will be "always" mounting the volume, we can set this up
 CMD python
+
+ARG VCS_REF
+ARG VCS_URL
+ARG BUILD_DATE
+LABEL org.label-schema.vcs-ref=${VCS_REF} \
+      org.label-schema.vcs-url=${VCS_URL} \
+      org.label-schema.build-date=${BUILD_DATE}

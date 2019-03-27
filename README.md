@@ -6,7 +6,7 @@
 [![](https://images.microbadger.com/badges/version/insightful/alpine-python.svg)](https://microbadger.com/images/insightful/alpine-python "Get your own version badge on microbadger.com")
 [![Build Status](https://travis-ci.org/insightfulsystems/alpine-python.svg?branch=master)](https://travis-ci.org/insightfulsystems/alpine-python)
 
-A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), inspired by [jfloff's original work](https://github.com/jfloff/alpine-python) but updated for Python 3.6/2.7 and 2018 builds of Alpine. The Python 3 image is only 285 MB and includes `python3-dev`, and all images include support for `manylinux` wheels (where possible)
+A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), inspired by [jfloff's original work](https://github.com/jfloff/alpine-python) but updated for Python 3.6/2.7 and 2019 builds of Alpine. The Python 3 image is only 285 MB and includes `python3-dev`, and all images include support for `manylinux` wheels (where possible)
 
 ## Supported tags
 

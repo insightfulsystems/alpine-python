@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.9
 
 MAINTAINER Rui Carmo https://github.com/rcarmo
 

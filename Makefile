@@ -147,9 +147,9 @@ push:
 
 
 clean:
-	-docker rm -v $$(docker ps -a -q -f status=exited)
-	-docker rmi $$(docker images -q -f dangling=true)
-	-docker rmi qemu-arm32v6
-	-docker rmi qemu-arm32v7
-	-docker rmi $$(docker images --format '{{.Repository}}:{{.Tag}}' | grep $(IMAGE_NAME))
+	-docker rm -fv $$(docker ps -a -q -f status=exited)
+	-docker rmi -f $$(docker images -q -f dangling=true)
+	-docker rmi -f qemu-arm32v6
+	-docker rmi -f qemu-arm32v7
+	-docker rmi -f $$(docker images --format '{{.Repository}}:{{.Tag}}' | grep $(IMAGE_NAME))
 

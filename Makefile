@@ -24,7 +24,7 @@ qemu-arm32v6:
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
 		--build-arg BASE=arm32v6/$(ALPINE_VERSION) \
-		-t qemu-arm32v6 qemu
+		-t local/qemu-arm32v6 qemu
 
 qemu-arm32v7:
 	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
@@ -32,7 +32,7 @@ qemu-arm32v7:
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
 		--build-arg BASE=arm32v7/$(ALPINE_VERSION) \
-		-t qemu-arm32v7 qemu
+		-t local/qemu-arm32v7 qemu
 
 2.7:
 	make 2.7-amd64
@@ -55,7 +55,7 @@ qemu-arm32v7:
 
 2.7-arm32v6:
 	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
-		--build-arg BASE=qemu-arm32v6 \
+		--build-arg BASE=local/qemu-arm32v6 \
 		--build-arg ARCH=arm32v6 \
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
@@ -69,7 +69,7 @@ qemu-arm32v7:
 
 2.7-arm32v7:
 	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
-		--build-arg BASE=qemu-arm32v7 \
+		--build-arg BASE=local/qemu-arm32v7 \
 		--build-arg ARCH=arm32v7 \
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
@@ -102,7 +102,7 @@ qemu-arm32v7:
 
 3.6-arm32v6:
 	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
-		--build-arg BASE=qemu-arm32v6 \
+		--build-arg BASE=local/qemu-arm32v6 \
 		--build-arg ARCH=arm32v6 \
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
@@ -116,7 +116,7 @@ qemu-arm32v7:
 
 3.6-arm32v7:
 	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
-		--build-arg BASE=qemu-arm32v7 \
+		--build-arg BASE=local/qemu-arm32v7 \
 		--build-arg ARCH=arm32v7 \
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
@@ -149,7 +149,6 @@ push:
 clean:
 	-docker rm -fv $$(docker ps -a -q -f status=exited)
 	-docker rmi -f $$(docker images -q -f dangling=true)
-	-docker rmi -f qemu-arm32v6
-	-docker rmi -f qemu-arm32v7
+	-docker rmi -f local/qemu-arm32v6 local/qemu-arm32v7
 	-docker rmi -f $$(docker images --format '{{.Repository}}:{{.Tag}}' | grep $(IMAGE_NAME))
 

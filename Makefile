@@ -129,12 +129,12 @@ qemu-arm32v7:
 		-t $(IMAGE_NAME):3.6-onbuild-arm32v7 onbuild
 
 manifest:
-	docker manifest create --amend \
+	docker manifest create \
 		$(IMAGE_NAME):latest \
 		$(IMAGE_NAME):3.6-amd64 \
 		$(IMAGE_NAME):3.6-arm32v6 \
 		$(IMAGE_NAME):3.6-arm32v7
-	docker manifest create --amend \
+	docker manifest create \
 		$(IMAGE_NAME):onbuild \
 		$(IMAGE_NAME):3.6-onbuild-amd64 \
 		$(IMAGE_NAME):3.6-onbuild-arm32v6 \

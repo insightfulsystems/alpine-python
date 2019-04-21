@@ -21,4 +21,4 @@ script:
 after_success:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - make push
-  - make manifest
+  - make manifest # this won't work on Travis CI for a bit since they are only using Docker 17.x

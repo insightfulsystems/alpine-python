@@ -6,6 +6,7 @@ services:
 before_install:
   - docker --version  # document the version travis is using
   - echo '{"experimental":true}' | sudo tee /etc/docker/daemon.json
+  - mkdir -p $HOME/.docker
   - echo '{"experimental":"enabled"}' | tee $HOME/.docker/config.json
   - sudo service docker restart
 

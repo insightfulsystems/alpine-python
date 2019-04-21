@@ -12,7 +12,7 @@ A small Python Docker image based on [Alpine Linux](http://alpinelinux.org/), in
 
 The images are now multi-architecture, so:
 
-* `insighful/python` and `insightful/python:onbuild` should "just work"
+* `insighful/python` and `insightful/python:onbuild` should "just work" (and default to providing Python 3.6)
 
 However, there are specific tags for runtime version, architecture and build step, like so:
 
@@ -59,7 +59,7 @@ docker run --rm -ti insightful/alpine-python python hello.py
 
 Or extend this image using your custom `Dockerfile`, e.g:
 ```dockerfile
-FROM insightful/alpine-python:3.6-onbuild
+FROM insightful/alpine-python:onbuild
 
 # for a flask server
 EXPOSE 5000

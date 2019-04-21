@@ -1,4 +1,5 @@
-FROM alpine:3.9
+ARG BASE
+FROM ${BASE}
 
 MAINTAINER Rui Carmo https://github.com/rcarmo
 

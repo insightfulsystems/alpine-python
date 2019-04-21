@@ -5,14 +5,19 @@ services:
 
 before_install:
   - docker --version  # document the version travis is using
+  - echo '{"experimental":true}' | sudo tee /etc/docker/daemon.json
+  - echo '{"experimental":"enabled"}' | tee $HOME/.docker/config.json
+  - sudo service docker restart
 
 install:
   - docker run --rm --privileged multiarch/qemu-user-static:register --reset # setup QEMU for cross-builds
 
 script:
+  - make deps
   - make 2.7
   - make 3.6
 
 after_success:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - make push
+  - make manifest

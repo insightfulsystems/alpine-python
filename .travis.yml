@@ -1,9 +1,9 @@
 language: minimal
 sudo: required
 addons:
-apt:
-packages:
-  - docker-ce # use experimental features
+  apt:
+    packages:
+      - docker-ce # use experimental features
 
 services:
   - docker

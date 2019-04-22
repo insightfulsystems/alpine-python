@@ -77,11 +77,11 @@ push:
 	docker push $(IMAGE_NAME)
 
 manifest:
-	docker manifest create --amend \
+	docker manifest create \
 		$(IMAGE_NAME):latest \
 		$(foreach arch, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):3.6-$(arch) )
 	docker manifest push $(IMAGE_NAME):latest
-	docker manifest create --amend \
+	docker manifest create \
 		$(IMAGE_NAME):onbuild \
 		$(foreach arch, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):3.6-onbuild-$(arch) )
 	docker manifest push $(IMAGE_NAME):onbuild

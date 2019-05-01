@@ -7,6 +7,7 @@ export ALPINE_VERSION=alpine:3.9
 export BUILD_IMAGE_NAME=local/alpine-base
 export TARGET_ARCHITECTURES=amd64 arm32v6 arm32v7
 export PYTHON_VERSIONS=2.7 3.6
+export SHELL=/bin/bash
 
 # Make sure make ignores the folders (I like short target names, but these collide with the folder structure)
 .PHONY: 2.7 3.6 qemu wrap push manifest clean
@@ -76,14 +77,30 @@ wrap-%:
 push:
 	docker push $(IMAGE_NAME)
 
+expand-%: # expand architecture variants for manifest
+	@if [ "$*" == "amd64" ] ; then \
+	   echo '--arch $*'; \
+	elif [[ "$*" == *"arm"* ]] ; then \
+	   echo '--arch arm --variant $*' | cut -c 1-21,27-; \
+	fi
+
+
 manifest:
 	docker manifest create --amend \
 		$(IMAGE_NAME):latest \
-		$(foreach arch, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):3.6-$(arch) )
+		$(foreach arch, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):3.6-$(arch))
+	$(foreach arch, $(TARGET_ARCHITECTURES), \
+		docker manifest annotate \
+			$(IMAGE_NAME):latest \
+			$(IMAGE_NAME):3.6-$(arch) $(shell make expand-$(arch));)
 	docker manifest push $(IMAGE_NAME):latest
 	docker manifest create --amend \
 		$(IMAGE_NAME):onbuild \
 		$(foreach arch, $(TARGET_ARCHITECTURES), $(IMAGE_NAME):3.6-onbuild-$(arch) )
+	$(foreach arch, $(TARGET_ARCHITECTURES), \
+		docker manifest annotate \
+			$(IMAGE_NAME):onbuild \
+			$(IMAGE_NAME):3.6-onbuild-$(arch) $(shell make expand-$(arch));)
 	docker manifest push $(IMAGE_NAME):onbuild
 
 

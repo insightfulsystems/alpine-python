@@ -4,6 +4,7 @@ export VCS_URL=https://github.com/insightfulsystems/alpine-python
 export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
 export TAG_DATE=`date -u +"%Y%m%d"`
 export ALPINE_VERSION=3.12.3
+export BASE_IMAGE=alpine
 export BUILD_IMAGE_NAME=local/alpine-base
 export TARGET_ARCHITECTURES=amd64 arm32v6 arm32v7
 export PYTHON_VERSIONS=2.7 3.8

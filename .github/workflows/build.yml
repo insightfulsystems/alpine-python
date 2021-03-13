@@ -1,0 +1,65 @@
+name: Custom Docker Builder
+
+on: 
+  push:
+    branches: 
+      - main
+      - master
+
+
+language: minimal
+sudo: required
+addons:
+  apt:
+    packages:
+      - docker-ce # use experimental features
+
+services:
+  - docker
+before_install:
+  - docker --version  # document the version travis is using
+  - echo '{"experimental":true}' | sudo tee /etc/docker/daemon.json
+  - mkdir -p $HOME/.docker && echo '{"experimental":"enabled"}' | tee $HOME/.docker/config.json
+  - sudo service docker restart
+
+jobs:
+  build2:
+    name: "2.7"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          submodules: false
+      - name: QEMU setup
+        run: make qemu
+      - name: Wrapper container
+        run: make wrap
+      - name: Install Python 2
+        run: make 2.7
+      - name: QEMU setup
+        run: make qemu
+      - name: Docker login
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Push all tags
+        run: make push
+  build3:
+    name: "3.8"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          submodules: false
+      - name: QEMU setup
+        run: make qemu
+      - name: Wrapper container
+        run: make wrap
+      - name: Install Python 3
+        run: make 3.8
+      - name: QEMU setup
+        run: make qemu
+      - name: Docker login
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Push all tags
+        run: make push

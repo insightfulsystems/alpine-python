@@ -5,7 +5,7 @@ export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
 export TAG_DATE=`date -u +"%Y%m%d"`
 export ALPINE_VERSION=3.12.3
 export BASE_IMAGE=alpine
-export BUILD_IMAGE_NAME=local/alpine-base
+export BUILD_IMAGE=local/alpine-base
 export TARGET_ARCHITECTURES=amd64 arm32v6 arm32v7
 export PYTHON_VERSIONS=2.7 3.8
 export QEMU_VERSION=5.1.0-8
@@ -65,7 +65,7 @@ wrap-%:
 	$(eval ARCH := $*)
 	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
 		--build-arg ARCH=$(ARCH) \
-		--build-arg BASE=$(BUILD_IMAGE_NAME):$(ARCH) \
+		--build-arg BASE=$(BUILD_IMAGE):$(ARCH) \
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
 		-t $(IMAGE_NAME):2.7-$(ARCH) 2.7
@@ -84,7 +84,7 @@ wrap-%:
 	$(eval ARCH := $*)
 	docker build --build-arg BUILD_DATE=$(BUILD_DATE) \
 		--build-arg ARCH=$(ARCH) \
-		--build-arg BASE=$(BUILD_IMAGE_NAME):$(ARCH) \
+		--build-arg BASE=$(BUILD_IMAGE):$(ARCH) \
 		--build-arg VCS_REF=$(VCS_REF) \
 		--build-arg VCS_URL=$(VCS_URL) \
 		-t $(IMAGE_NAME):3.8-$(ARCH) 3.8
@@ -129,6 +129,6 @@ manifest:
 clean:
 	-docker rm -fv $$(docker ps -a -q -f status=exited)
 	-docker rmi -f $$(docker images -q -f dangling=true)
-	-docker rmi -f $(BUILD_IMAGE_NAME)
+	-docker rmi -f $(BUILD_IMAGE)
 	-docker rmi -f $$(docker images --format '{{.Repository}}:{{.Tag}}' | grep $(IMAGE_NAME))
 

@@ -22,11 +22,11 @@ jobs:
         - make 2.7
         - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         - make push
-    - stage: 3.6
+    - stage: 3.8
       script:
         - make qemu
         - make wrap
-        - make 3.6
+        - make 3.8
         - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         - make push
         - make manifest

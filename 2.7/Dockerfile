@@ -1,8 +1,6 @@
 ARG BASE
 FROM ${BASE}
 
-MAINTAINER Rui Carmo https://github.com/rcarmo
-
 # Adds testing package to repositories
 # Install needed packages. Notes:
 #   * build-base: used so we include the basic development packages (gcc)

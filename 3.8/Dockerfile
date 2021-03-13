@@ -1,8 +1,6 @@
 ARG BASE
 FROM ${BASE}
 
-MAINTAINER Rui Carmo https://github.com/rcarmo
-
 # Adds testing package to repositories
 # Install needed packages. Notes:
 #   * build-base: used so we include the basic development packages (gcc)
@@ -21,7 +19,7 @@ RUN apk add --update \
               libxml2-dev \
               libxslt-dev \
               jpeg-dev \
- && pip3.8 install --upgrade pip \
+ && pip install --upgrade pip \
  && rm /var/cache/apk/*
 
 # make us compatible with manylinux wheels and create some useful symlinks that are expected to exist

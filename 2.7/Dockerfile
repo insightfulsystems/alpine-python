@@ -14,8 +14,8 @@ RUN apk add --update \
               build-base \
               bash \
               git \
-              python \
-              python-dev \
+              python2 \
+              python2-dev \
               py-pip \
               gfortran \
               lapack-dev \

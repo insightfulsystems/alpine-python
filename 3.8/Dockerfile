@@ -12,6 +12,7 @@ RUN apk add --update \
               build-base \
               python3 \
               python3-dev \
+              py3-pip \
               bash \
               git \
               gfortran \

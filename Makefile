@@ -8,7 +8,7 @@ export BASE_IMAGE=alpine
 export BUILD_IMAGE=local/alpine-base
 export TARGET_ARCHITECTURES=amd64 arm32v6 arm32v7
 export PYTHON_VERSIONS=2.7 3.8
-export QEMU_VERSION=5.1.0-8
+export QEMU_VERSION=5.2.0-2
 export QEMU_ARCHITECTURES=arm aarch64
 export SHELL=/bin/bash
 
